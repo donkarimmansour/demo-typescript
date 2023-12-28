@@ -1,0 +1,16 @@
+
+
+./__snapshots__
+./.git
+
+
+# ./.env
+./node_modules
+
+./Dockerfile
+./docker-compose.yml
+./.dockerignore
+
+# ./package.json
+# ./package-lock.json
+./pnpm-lock.yaml

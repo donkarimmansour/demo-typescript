@@ -1,0 +1,109 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@db/*": [
+        "./prisma/generated/*"
+      ],
+      "@state/*": [
+        "./src/client/state/*"
+      ],
+      "@services/*": [
+        "./src/client/services/*"
+      ],
+      "@components/*": [
+        "./src/client/ui/components/*"
+      ],
+      "@layouts/*": [
+        "./src/client/ui/layouts/*"
+      ],
+      "@containers/*": [
+        "./src/client/ui/containers/*"
+      ],
+      "@style/*": [
+        "./src/client/ui/style/*"
+      ],
+      "@utils/*": [
+        "./src/client/providers/utils/*"
+      ],
+      "@helpers/*": [
+        "./src/client/providers/helpers/*"
+      ],
+      "@libs/*": [
+        "./src/client/providers/libs/*"
+      ],
+      "@common/*": [
+        "./src/client/providers/common/*"
+      ],
+      "@data/*": [
+        "./src/client/providers/data/*"
+      ],
+      "@i18n/*": [
+        "./src/client/providers/locals/*"
+      ],
+      "@graphql/*": [
+        "./src/server/graphql/*"
+      ],
+      "@middlewares/*": [
+        "./src/server/middlewares/*"
+      ],
+      "@srvr_cutils/*": [
+        "./src/utils/*"
+      ],
+      "@srvr_helpers/*": [
+        "./src/client/providers/helpers/*"
+      ],
+      "@srvr_libs/*": [
+        "./src/client/providers/libs/*"
+      ],
+      "@srvr_common/*": [
+        "./src/client/providers/common/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "next.config.js",
+    ".next/types/**/*.ts"
+  ],
+ // "types": ["@types/jest"]
+}

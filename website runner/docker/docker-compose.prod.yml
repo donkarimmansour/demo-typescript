@@ -1,0 +1,145 @@
+version: '3.3'
+services:
+
+  homer:
+    image: b4bz/homer
+    container_name: homer
+    ports:
+      - '8080:8080'
+    restart: unless-stopped
+    volumes:
+      - './docker/homer/data:/www/assets'
+
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    ports:
+      - 9443:9443 
+      - 8000:8000
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - './docker/portainer/data:/data'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    # Mmmm/@1111mm
+  
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - '80:80'
+    restart: unless-stopped
+  
+
+  nginxProxyManager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginxProxyManager
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    restart: unless-stopped
+    volumes:
+      - './docker/nginxProxyManager/data:/data'
+      - './docker/nginxProxyManager/letsencrypt:/etc/letsencrypt'
+ 
+
+  duckdns:
+    image: 'lscr.io/linuxserver/duckdns:latest'
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      - SUBDOMAINS=allinone2023
+      - TOKEN=5e8b9baa-3303-47dc-9bca-096fe1624174
+      - TZ=Africa/Casablanca
+      - LOG_FILE=true
+      # https://allinone2023.duckdns.org/
+
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    expose:
+      - "27017"
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - 'mongoDb:/data/db'
+    entrypoint: [ "mongod", "--replSet", "myReplicaSet", "--bind_ip_all"]
+
+
+  mongoExpress:
+    image: mongo-express
+    container_name: mongoExpress
+    ports:
+      - 8081:8081
+    restart: unless-stopped
+    depends_on:
+       - mongo
+    environment:
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: true 
+      ME_CONFIG_MONGODB_URL	: 'mongodb://mongo:27017/?replicaSet=myReplicaSet'
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: test        
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: 123456          
+      # ME_CONFIG_MONGODB_PORT: 27017    
+      # ME_CONFIG_MONGODB_SERVER: mongo
+      ###########################################################################
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: 123456
+      ###########################################################################
+      # ME_CONFIG_MONGODB_AUTH_DATABASE: first-test
+      # ME_CONFIG_MONGODB_AUTH_USERNAME: karim
+      # ME_CONFIG_MONGODB_AUTH_PASSWORD: 123
+
+
+  prisma:
+      container_name: prisma
+      build:
+        context: ./
+        dockerfile: ./prisma/Dockerfile
+      restart: unless-stopped
+      ports:
+        - 5555:5555
+      depends_on:
+        - mongo
+
+
+  web:
+      image: web
+      container_name: web
+      # build:
+      #   context: ./
+      # command: npm run dev
+      depends_on:
+       - nginxProxyManager
+       - duckdns
+       - mongo
+       - mongoExpress
+       - prisma
+      volumes:
+       - .:/app
+       - /app/node_modules
+      # env_file:
+      #   - .env
+      # environment:
+      #   NODE_ENV: development
+      # networks:
+      #   - proxy
+      #   - internal-prod
+
+
+    
+volumes:
+  mongoDb:
+      name: mongoDb
+      external: false
+
+# networks:
+#   default1:
+#       name: default1
+#       driver: bridge
+#       external: false

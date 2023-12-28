@@ -1,0 +1,9 @@
+
+nssm install 000AAA-prisma D:\websites\first-test-new\website runner\batchFile\prisma\start.bat
+nssm set 000AAA-prisma AppStdout D:\websites\first-test-new\website runner\batchFile\prisma\logfiles\out.txt 
+nssm set 000AAA-prisma AppStderr D:\websites\first-test-new\website runner\batchFile\prisma\logfiles\err.txt
+
+nssm start 000AAA-prisma
+nssm restart  000AAA-prisma
+nssm remove 000AAA-prisma confirm
+

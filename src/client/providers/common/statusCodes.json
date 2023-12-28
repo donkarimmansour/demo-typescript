@@ -1,0 +1,33 @@
+{
+
+    "200": {
+        "short": "OK",
+        "code": 200,
+        "large": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request, the response will contain an entity describing or containing the result of the action."
+    },
+
+    "400": {
+        "short": "Bad Request",
+        "code": 400,
+        "large": "The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing)."
+    },
+
+    "401": {
+        "short": "Unauthorized",
+        "code": 401,
+        "large": "Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource. See Basic access authentication and Digest access authentication.[33] 401 semantically means 'unauthenticated' the user does not have the necessary credentials. Note: Some sites issue HTTP 401 when an IP address is banned from the website (usually the website domain) and that specific address is refused permission to access a website."
+    },
+
+    "402": {
+        "short": "Payment Required",
+        "code": 402,
+        "large": "Reserved for future use. The original intention was that this code might be used as part of some form of digital cash or micropayment scheme, but that has not happened, and this code is not usually used. Google Developers API uses this status if a particular developer has exceeded the daily limit on requests."
+    },
+
+    "404": {
+        "short": "Not Found",
+        "code": 404,
+        "large": "The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible."
+    }
+
+}

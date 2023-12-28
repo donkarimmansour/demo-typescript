@@ -1,0 +1,5 @@
+2023/08/05 13:08:04 [warn] 189#189: 512 worker_connections are not enough, reusing connections
+2023/08/05 13:08:04 [alert] 189#189: 512 worker_connections are not enough
+2023/08/05 13:08:04 [error] 190#190: *921 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "localhost", referrer: "http://localhost/"
+2023/08/14 12:00:18 [alert] 223#223: 512 worker_connections are not enough
+2023/08/14 12:00:18 [error] 224#224: *654 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "localhost", referrer: "http://localhost/?error=access_denied&error_description=The+user+has+denied+your+application+access.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23access-denied&state=fbf5436f2b7644b58bbc5b57b6c6aa6e"

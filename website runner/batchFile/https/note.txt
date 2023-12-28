@@ -1,0 +1,10 @@
+
+nssm install 000AAA-https D:\websites\first-test-new\website runner\batchFile\https\start.bat
+nssm set 000AAA-https AppStdout D:\websites\first-test-new\website runner\batchFile\https\logfiles\out.txt 
+nssm set 000AAA-https AppStderr D:\websites\first-test-new\website runner\batchFile\https\logfiles\err.txt
+
+nssm start 000AAA-https
+nssm restart  000AAA-https
+nssm remove 000AAA-https confirm
+
+ 

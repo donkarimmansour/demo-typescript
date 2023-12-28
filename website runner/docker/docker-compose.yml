@@ -1,0 +1,64 @@
+version: '3.3'
+services:
+
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    expose:
+      - "27017"
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - 'mongoDb:/data/db'
+    entrypoint: [ "mongod", "--replSet", "myReplicaSet", "--bind_ip_all"]
+
+
+  prisma:
+      container_name: prisma
+      build:
+        context: ./
+        dockerfile: ./prisma/Dockerfile
+      restart: unless-stopped
+      ports:
+        - 5555:5555
+      depends_on:
+        - mongo
+
+
+  web:
+      image: web
+      container_name: web
+      # build:
+      #   context: ./
+      # command: npm run dev
+      depends_on:
+       - mongo
+       - prisma
+      volumes:
+       - .:/app
+       - /app/node_modules
+      # env_file:
+      #   - .env
+      # environment:
+      #   NODE_ENV: development
+      # networks:
+      #   - proxy
+      #   - internal-prod
+
+
+    
+volumes:
+  mongoDb:
+      name: mongoDb
+      external: false
+
+# networks:
+#   default1:
+#       name: default1
+#       driver: bridge
+#       external: false

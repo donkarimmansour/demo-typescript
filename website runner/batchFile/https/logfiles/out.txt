@@ -1,0 +1,114 @@
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+ ELIFECYCLE  Command failed with exit code 1.
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+Terminate batch job (Y/N)? 
+D:\websites\first-test\batchFile\https>pnpm https 
+
+> first-test@0.1.0 https D:\websites\first-test
+> local-ssl-proxy --source 3001 --target 3000
+
+[32mStarted proxy: https://localhost:3001 → http://localhost:3000[39m
+Terminate batch job (Y/N)? 

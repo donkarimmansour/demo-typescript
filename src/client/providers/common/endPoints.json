@@ -1,0 +1,8 @@
+{
+    "Post": {
+        "list": "list",
+        "add": "add/:id",
+        "edit": "edit/:id",
+        "delete": "delete/:id"
+    }
+}

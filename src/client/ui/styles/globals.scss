@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// :root {
+//   --foreground-rgb: 0, 0, 0;
+//   --background-start-rgb: 214, 219, 220;
+//   --background-end-rgb: 255, 255, 255;
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --foreground-rgb: 255, 255, 255;
+//     --background-start-rgb: 0, 0, 0;
+//     --background-end-rgb: 0, 0, 0;
+//   }
+// }
+
+
+  // color: rgb(var(--foreground-rgb));
+  // background: linear-gradient(
+  //     to bottom,
+  //     transparent,
+  //     rgb(var(--background-end-rgb))
+  //   )
+  //   rgb(var(--background-start-rgb));
+
+
+body {
+   margin: 0px;
+   padding: 0px;
+   font-size: 100%;
+   box-sizing: border-box;
+   font-family: system-ui;
+}
+
+// start card-post
+
+.card-post {
+  max-width: 300px;
+  padding: 1em 1em;
+  border-radius: 1em;
+  border: 1px #ccc solid;
+  box-shadow: #ccc 2px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.card-post img {
+  padding: 0em 2em;
+  height: 200px;
+  object-fit: contain;
+  background-color: #eaf6ff;
+}
+
+
+.card-post img:hover {
+  padding: 0em 1em
+
+}
+
+
+
+.card-post .body{
+  display: flex;
+}
+
+.card-post .content{
+  padding: 0em 0.5em;
+    display: flex;
+    row-gap: 0.3em;
+    flex-direction: column;
+}
+
+.card-post .title{
+  font-size: 1em;
+    font-weight: 400;
+}
+
+.card-post .description{
+  font-size: 0.8em;
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.card-post .actions{
+  align-self: end;
+  position: relative;
+}
+
+.card-post .dots{
+  cursor: pointer;
+}
+
+.card-post .dots:hover + ul{
+  display: flex;
+}
+
+.card-post ul{
+  display: none;
+  position: absolute;
+  right: 5px;
+  bottom: 17px;
+  background-color: #9fddc9;
+  padding: 0.7em 0.5em;
+  border-radius: 0.2em;
+  box-shadow: #ccc 2px 5px 5px;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+
+
+.card-post li{
+  font-size: 1em;
+  font-weight: 300;
+  outline: 1px #fff solid;
+  text-align: center;
+  border-radius: 0.2em;
+  color: aqua;
+  padding: 1px 10px;
+}
+
+
+
+.card-post .edit{
+  color: aqua;
+}
+
+.card-post .delete{
+  color: tomato;
+}
+
+// end card-post

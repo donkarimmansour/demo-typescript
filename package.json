@@ -1,0 +1,225 @@
+{
+  "name": "first-test",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://allapiinone2023.duckdns.org/",
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+
+    "prisma:seed": "prisma db seed",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio --port 5555 --browser chrome",
+    "prisma:build": "docker image build -f ./website runner/docker/prisma.dockerFile -t web .",
+
+    "docker:dev": "docker-compose up -d -f ./website runner/docker/docker-compose.yml",
+    "docker:prod": "docker-compose up -d -f ./website runner/docker/docker-compose.prod.yml",
+    "docker:build": "docker image build -f ./website runner/docker/nextjs.dockerFile -t web .",
+
+    "mongo": "mongod --port 27017 --dbpath D:/System/mongodb/data --logpath D:/System/mongodb/log/mongod.log --replSet myReplicaSet",
+    "https": "local-ssl-proxy --source 3001 --target 3000",
+    
+    "lint:fix": "next lint --ignore-path .gitignore --fix",
+    "test:e2e:headless": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:single": "jest --watch",
+    "test:all": "jest --watchAll",
+    "test:coverage:all": "jest --watchAll --coverage",
+    "test:coverage:single": "jest --watch --coverage",
+    "test:coverage": "jest --coverage",
+    "format": "prettier --ignore-path .gitignore --check \"**/*.{js,jsx,ts,tsx}\"",
+    "format:fix": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,ts,tsx}\"",
+    "lint:staged": "lint-staged"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.17",
+    "@apollo/experimental-nextjs-app-support": "^0.4.3",
+    "@apollo/server": "^4.7.5",
+    "@as-integrations/next": "^2.0.1",
+    "@prisma/client": "^5.0.0",
+    "@reduxjs/toolkit": "^1.9.6",
+    "accept-language": "^3.0.18",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "flowbite": "^2.1.1",
+    "flowbite-react": "^0.6.4",
+    "framer-motion": "^10.13.0",
+    "graphql": "^16.7.1",
+    "graphql-type-json": "^0.3.2",
+    "moment": "^2.29.4",
+    "multer": "1.4.5-lts.1",
+    "next": "13.4.10",
+    "next-auth": "^4.22.3",
+    "next-seo": "^6.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.2",
+    "react-icons": "^4.10.1",
+    "react-redux": "^8.1.2",
+    "react-table": "^7.8.0",
+    "recharts": "^2.7.2",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.2.3",
+    "sass": "^1.64.1",
+    "server-only": "^0.0.1",
+    "tailwindcss": "3.3.3",
+    "zod": "^3.21.4",
+    "zustand": "^4.3.9"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.6",
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^6.7.4",
+    "encoding": "^0.1.13",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest-dom": "^5.1.0",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-testing-library": "^6.1.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^13.2.3",
+    "matter-js": "^0.19.0",
+    "msw": "^2.0.0",
+    "postcss": "8.4.26",
+    "prisma": "^5.0.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+
+
+
+  "jest": {
+    "rootDir": "./",
+    "roots": [
+      "<rootDir>/src/tests/"
+    ],
+    "testMatch": [
+      "<rootDir>/src/tests/**/*.ts"
+    ],
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "mjs",
+      "cjs",
+      "jsx",
+      "ts",
+      "tsx",
+      "json",
+      "node"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "moduleNameMapper": {
+      "^~(.*)$": "<rootDir>/src/$1",
+      "^@utils/(.*)$": "<rootDir>/src/client/providers/utils/$1"
+    },
+    "preset": "ts-jest",
+    "transform": {
+      "^.+\\.(ts|tsx)?$": "ts-jest"
+    },
+    "testEnvironment": "jest-environment-jsdom"
+  },
+
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "next",
+      "prettier",
+      "react-app",
+      "react-app/jest",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:storybook/recommended",
+      "plugin:tailwindcss/recommended",
+      "standard-with-typescript",
+      "plugin:jest-dom/recommended",
+      "plugin:testing-library/react",
+      "plugin:jest/recommended",
+      "plugin:playwright/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "overrides": [
+      {
+        "env": {
+          "node": true
+        },
+        "files": [
+          ".eslintrc.{js,cjs}"
+        ],
+        "parserOptions": {
+          "sourceType": "script"
+        }
+      }
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "ignorePatterns": [
+      "/build"
+    ]
+  },
+  
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": true,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  },
+
+
+  "lint-staged": {
+    "*.ts": [
+      "npm lint",
+      "npm run format:fix",
+      "npm run test:single"
+    ]
+  },
+
+  
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+
+  "engines": {
+    "node": ">=18.15.0"
+  }
+
+}

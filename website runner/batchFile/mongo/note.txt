@@ -1,0 +1,9 @@
+
+nssm install 000AAA-mongo D:\websites\first-test-new\website runner\batchFile\mongo\start.bat
+nssm set 000AAA-mongo AppStdout D:\websites\first-test-new\website runner\batchFile\mongo\logfiles\out.txt 
+nssm set 000AAA-mongo AppStderr D:\websites\first-test-new\website runner\batchFile\mongo\logfiles\err.txt
+
+
+nssm start 000AAA-mongo
+nssm restart 000AAA-mongo
+nssm remove 000AAA-mongo confirm 

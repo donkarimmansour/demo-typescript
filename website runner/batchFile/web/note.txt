@@ -1,0 +1,9 @@
+
+nssm install 000AAA-web D:\websites\first-test-new\website runner\batchFile\web\start.bat
+nssm set 000AAA-web AppStdout D:\websites\first-test-new\website runner\batchFile\web\logfiles\out.txt 
+nssm set 000AAA-web AppStderr D:\websites\first-test-new\website runner\batchFile\web\logfiles\err.txt
+
+nssm start 000AAA-web
+nssm restart  000AAA-web
+nssm remove 000AAA-web confirm
+
